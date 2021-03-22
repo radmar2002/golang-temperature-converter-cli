@@ -178,7 +178,7 @@ func TestCheckConversionM2(t *testing.T) {
 		stdin.Close()
 		outPrint, _ := ioutil.ReadAll(outPipe)
 		if !strings.Contains(string(outPrint), "32 F = 0 C") {
-			t.Fatal("Did not property convert temperature")
+			t.Fatal("Did not properly convert temperature")
 		}
 	})
 
@@ -209,7 +209,7 @@ func TestPromptAgainM2(t *testing.T) {
 		if e != nil {
 			panic(e)
 		}
-		_, e = stdin.Write([]byte(" y\n"))
+		_, e = stdin.Write([]byte(" Y\n"))
 		if e != nil {
 			panic(e)
 		}
@@ -264,7 +264,7 @@ func TestParsePromptToUpperM2(t *testing.T) {
 		outPrint, _ := ioutil.ReadAll(outPipe)
 		if !strings.Contains(string(outPrint), "32 F = 0 C") ||
 			!strings.Contains(string(outPrint), "212 F = 100 C") {
-			t.Fatal("Did not propery parse user input")
+			t.Fatal("Did not properly parse user input")
 		}
 	})
 }
