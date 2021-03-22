@@ -252,7 +252,7 @@ func TestParsePromptToUpperM2(t *testing.T) {
 		if e != nil {
 			panic(e)
 		}
-		_, e = stdin.Write([]byte("y\n"))
+		_, e = stdin.Write([]byte("Y\n"))
 		if e != nil {
 			panic(e)
 		}
